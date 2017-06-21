@@ -2,12 +2,11 @@
 # Matrix mod for Minetest
 
 
-This mod creates a bridge between a [Matrix](https://matrix.org) channel and the in-game chat.
+This mod creates a bridge between a [Matrix](https://matrix.org) channel and the in-game chat.  
 The code is shamelessly based on the [irc](https://github.com/minetest-mods/irc) mod and examples from [lua-matrix](https://github.com/aperezdc/lua-matrix).
 
 
 ## Installing
-
 
 ```bash
 cd <Mods directory> && git clone --recursive git@github.com:diggers-mt/minetest-matrix.git
@@ -34,7 +33,7 @@ luarocks install lua-cjson
 export MATRIX_API_HTTP_CLIENT=luasocket
 ```
 
-You might need to prepend `sudo` to first and second commands
+You might need to prepend `sudo` to first and second commands.
 
 For the moment you need to disabled mod security for lua-matrix to work. This will hopefully change.
 
@@ -47,7 +46,7 @@ secure.enable_security = false
 
 ## Settings
 
-* `matrix.user`: Matrix username, for example `@minetestbot@matrix.org`
+* `matrix.user`: Matrix username, for example `@minetestbot:matrix.org`
 
 * `matrix.password`: Password for Matrix user
 
@@ -61,4 +60,3 @@ secure.enable_security = false
 ## License
 
 See `LICENSE.txt` for details.
-
