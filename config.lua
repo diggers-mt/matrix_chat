@@ -29,5 +29,5 @@ end
 setting("string", "user", nil, true) 			-- User name, fe @digbot:matrix.org
 setting("string", "server", nil, true) 		-- Server address to connect to
 setting("number", "port", 8448) 					-- Server port to connect to
-setting("string", "channel", nil, true) 	-- Channel to join (not needed?)
+setting("string", "room_id", nil, true) 	-- Channel to join (not needed?)
 setting("string", "password", nil, true) 	-- Server password

@@ -32,14 +32,14 @@ end
 
 local client = require("matrix").client("https://"..matrix.config.server..":"..matrix.config.port)
 
-client:login_with_password(matrix.config.user, matrix.config.password, true)
-
-local running, start_ts = true, os.time() * 1000
+local start_ts = os.time() * 1000
 
 client:hook("invite", function (client, room)
-   -- When invited to a room, join it
-   eprintf("Invited to room %s\n", room)
-   client:join_room(room)
+  -- When invited to a room, join it
+  eprintf("Invited to room %s\n", room)
+  if room.room_id == matrix.config.room_id then
+    client:join_room(room)
+  end
 end):hook("logged-in", function (client)
 	matrix.connected = true
   eprintf("Logged in successfully\n")
@@ -59,7 +59,7 @@ end):hook("joined", function (client, room)
       eprintf("  - %s\n", room)
    end
 
-   room:send_text("Type “!bot quit” to make the bot exit")
+   --room:send_text("Type “!bot quit” to make the bot exit")
 
    room:hook("message", function (room, sender, message, event)
       if event.origin_server_ts < start_ts then
@@ -83,7 +83,7 @@ end):hook("joined", function (client, room)
         end
         client:logout()
         matrix.connected = false
-      else
+      elseif room.room_id == matrix.config.room_id then
         minetest.chat_send_all("<"..sender.."> "..message.body)
       end
    end)

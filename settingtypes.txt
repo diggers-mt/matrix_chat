@@ -13,7 +13,7 @@ matrix.server (Matrix server) string https://matrix.org
 matrix.port (Server port) int 8448
 
 # Channel the bot joins after connecting.
-matrix.channel (Channel to join) string #minetest
+matrix.room_id (Channel to join) string
 
 # Matrix user password.
 matrix.password (Server password) string
