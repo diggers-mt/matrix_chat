@@ -47,45 +47,45 @@ end):hook("logged-out", function (client)
   eprintf("Logged out... bye!\n")
   matrix.connected = false
 end):hook("left", function (client, room)
-   eprintf("Left room %s, active rooms:\n", room)
-   for room_id, room in pairs(client.rooms) do
-      assert(room_id == room.room_id)
-      eprintf("  - %s\n", room)
-   end
+  eprintf("Left room %s, active rooms:\n", room)
+  for room_id, room in pairs(client.rooms) do
+    assert(room_id == room.room_id)
+    eprintf("  - %s\n", room)
+  end
 end):hook("joined", function (client, room)
-   eprintf("Active rooms:\n")
-   for room_id, room in pairs(client.rooms) do
-      assert(room_id == room.room_id)
-      eprintf("  - %s\n", room)
-   end
+  eprintf("Active rooms:\n")
+  for room_id, room in pairs(client.rooms) do
+    assert(room_id == room.room_id)
+    eprintf("  - %s\n", room)
+  end
 
    --room:send_text("Type “!bot quit” to make the bot exit")
 
   room:hook("message", function (room, sender, message, event)
-      if event.origin_server_ts < start_ts then
-        eprintf("%s: (Skipping message sent before bot startup)\n", room)
-        return
-      end
-      if sender == room.client.user_id then
-        eprintf("%s: (Skipping message sent by ourselves)\n", room)
-        return
-      end
-      if message.msgtype ~= "m.text" then
-        eprintf("%s: (Message of type %s ignored)\n", room, message.msgtype)
-        return
-      end
+    if event.origin_server_ts < start_ts then
+      eprintf("%s: (Skipping message sent before bot startup)\n", room)
+      return
+    end
+    if sender == room.client.user_id then
+      eprintf("%s: (Skipping message sent by ourselves)\n", room)
+      return
+    end
+    if message.msgtype ~= "m.text" then
+      eprintf("%s: (Message of type %s ignored)\n", room, message.msgtype)
+      return
+    end
 
-      eprintf("%s: <%s> %s\n", room, sender, message.body)
+    eprintf("%s: <%s> %s\n", room, sender, message.body)
 
-      if message.body == "!bot quit" then
-        for _, room in pairs(client.rooms) do
-          room:send_text("(gracefully shutting down)")
-        end
-        client:logout()
-        matrix.connected = false
-      elseif room.room_id == matrix.config.room_id then
-        minetest.chat_send_all("<"..sender.."> "..message.body)
+    if message.body == "!bot quit" then
+      for _, room in pairs(client.rooms) do
+        room:send_text("(gracefully shutting down)")
       end
+      client:logout()
+      matrix.connected = false
+    elseif room.room_id == matrix.config.room_id then
+      minetest.chat_send_all("<"..sender.."> "..message.body)
+    end
    end)
 end)
 
