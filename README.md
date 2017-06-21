@@ -36,10 +36,10 @@ export MATRIX_API_HTTP_CLIENT=luasocket
 
 You might need to prepend `sudo` to first and second commands
 
-You also need to add Matrix to your trusted mods if you haven't disabled mod security.
+For the moment you need to disabled mod security for lua-matrix to work. This will hopefully change.
 
 ```
-secure.trusted_mods = matrix
+secure.enable_security = false
 ```
 
 [wiki]: https://wiki.minetest.net/Installing_mods

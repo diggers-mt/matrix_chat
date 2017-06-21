@@ -8,8 +8,7 @@ local ie, req_ie = _G, minetest.request_insecure_environment
 if req_ie then ie = req_ie() end
 if not ie then
   error("The Matrix mod requires access to insecure functions in order "..
-    "to work.  Please add the matrix mod to your secure.trusted_mods "..
-    "setting or disable the matrix mod.")
+    "to work. Please disable mod security. This will hopefully change.")
 end
 
 ie.package.path =
@@ -30,7 +29,7 @@ local function eprintf(fmt, ...)
   minetest.log("info", fmt:format(...))
 end
 
-local client = require("matrix").client("https://"..matrix.config.server..":"..matrix.config.port)
+local client = require("matrix").client(matrix.config.server..":"..matrix.config.port)
 
 local start_ts = os.time() * 1000
 
