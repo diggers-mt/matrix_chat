@@ -1,0 +1,1 @@
+This mod creates a bridge between (multiple) Matrix channels and in-game chat!

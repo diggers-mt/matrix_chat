@@ -1,0 +1,24 @@
+
+[Basic]
+
+# Bots username. May only contain characters A-Z, 0-9
+# '{', '}', '[', ']', '|', '^', '-', or '_'.
+matrix.user (Username) string
+
+# Server to connect to, include http(s)
+matrix.server (Matrix server) string https://matrix.org
+
+# Server port.
+# The standard matrix port is 8448
+matrix.port (Server port) int 8448
+
+# Channel the bot joins after connecting.
+matrix.channel (Channel to join) string #minetest
+
+# Matrix user password.
+matrix.password (Server password) string
+
+# Accesstoken for User (not used?)
+matrix.access_token (Server password) string
+
+
