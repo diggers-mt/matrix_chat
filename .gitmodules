@@ -1,0 +1,3 @@
+[submodule "lua-matrix"]
+	path = lua-matrix
+	url = https://github.com/diggers-mt/lua-matrix
