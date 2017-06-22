@@ -132,13 +132,10 @@ function matrix.disconnect(message)
   end
 end
 
-function matrix.say(to, message)
-  if not message then
-    message = to
-    to = matrix.config.channel
-  end
-  to = to or matrix.config.channel
+function matrix.say(message)
   for room_id, room in pairs(client.rooms) do
-    room:send_text(message)
+    if room.room_id == matrix.config.room_id then
+      room:send_text(message)
+    end
   end
 end
