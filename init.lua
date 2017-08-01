@@ -29,6 +29,10 @@ local function eprintf(fmt, ...)
   minetest.log("info", fmt:format(...))
 end
 
+-- Temporarily set require so that LuaIRC can access it
+local old_require = require
+require = ie.require
+
 local client = require("matrix").client(matrix.config.server..":"..matrix.config.port)
 
 local start_ts = os.time() * 1000
@@ -139,3 +143,6 @@ function matrix.say(message)
     end
   end
 end
+
+-- Restore old (safe) functions
+require = old_require
