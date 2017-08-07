@@ -8,7 +8,7 @@ local ie, req_ie = _G, minetest.request_insecure_environment
 if req_ie then ie = req_ie() end
 if not ie then
   error("The Matrix mod requires access to insecure functions in order "..
-    "to work. Please disable mod security. This will hopefully change.")
+    "to work. Please add matrix to secure.trusted_mods.")
 end
 
 ie.package.path =

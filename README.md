@@ -31,16 +31,18 @@ Tested on 16.04.
 
 ```bash
 apt-get install lua5.1 luarocks lua-sec
-luarocks install lua-cjson luasocket luasec
+luarocks install lua-cjson
+luarocks install luasocket
+luarocks install luasec
 export MATRIX_API_HTTP_CLIENT=luasocket
 ```
 
 You might need to prepend `sudo` to first and second commands.
 
-For the moment you need to disabled mod security for lua-matrix to work. This will hopefully change.
+For the moment you need to add `matrix` to `secure.trusted_mods` for lua-matrix to work. This will hopefully change.
 
 ```
-secure.enable_security = false
+secure.trusted_mods = matrix
 ```
 
 [wiki]: https://wiki.minetest.net/Installing_mods
