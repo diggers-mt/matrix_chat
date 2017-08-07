@@ -31,7 +31,7 @@ Tested on 16.04.
 
 ```bash
 apt-get install lua5.1 luarocks lua-sec
-luarocks install lua-cjson
+luarocks install lua-cjson luasocket luasec
 export MATRIX_API_HTTP_CLIENT=luasocket
 ```
 
