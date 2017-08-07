@@ -2,7 +2,7 @@
 # Matrix mod for Minetest
 
 
-This mod creates a bridge between a [Matrix](https://matrix.org) channel and the in-game chat.  
+This mod creates a bridge between a [Matrix](https://matrix.org) channel and the in-game chat.
 The code is shamelessly based on the [irc](https://github.com/minetest-mods/irc) mod and examples from [lua-matrix](https://github.com/aperezdc/lua-matrix).
 
 
@@ -20,6 +20,8 @@ luarocks-5.1 install lua-cjson
 brew install openssl
 luarocks-5.1 install cqueues CRYPTO_DIR=/usr/local/opt/openssl/ OPENSSL_DIR=/usr/local/opt/openssl #https://github.com/wahern/cqueues/wiki/Installation-on-OSX#via-brew
 luarocks-5.1 install luaossl CRYPTO_DIR=/usr/local/opt/openssl/ OPENSSL_DIR=/usr/local/opt/openssl
+luarocks-5.1 install luasocket
+luarocks-5.1 install luasec OPENSSL_DIR=/usr/local/opt/openssl
 export MATRIX_API_HTTP_CLIENT=luasocket
 ```
 
