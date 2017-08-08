@@ -2,7 +2,7 @@
 # Matrix mod for Minetest
 
 
-This mod creates a bridge between a [Matrix](https://matrix.org) channel and the in-game chat.  
+This mod creates a bridge between a [Matrix](https://matrix.org) channel and the in-game chat.
 The code is shamelessly based on the [irc](https://github.com/minetest-mods/irc) mod and examples from [lua-matrix](https://github.com/aperezdc/lua-matrix).
 
 
@@ -20,6 +20,8 @@ luarocks-5.1 install lua-cjson
 brew install openssl
 luarocks-5.1 install cqueues CRYPTO_DIR=/usr/local/opt/openssl/ OPENSSL_DIR=/usr/local/opt/openssl #https://github.com/wahern/cqueues/wiki/Installation-on-OSX#via-brew
 luarocks-5.1 install luaossl CRYPTO_DIR=/usr/local/opt/openssl/ OPENSSL_DIR=/usr/local/opt/openssl
+luarocks-5.1 install luasocket
+luarocks-5.1 install luasec OPENSSL_DIR=/usr/local/opt/openssl
 export MATRIX_API_HTTP_CLIENT=luasocket
 ```
 
@@ -30,15 +32,17 @@ Tested on 16.04.
 ```bash
 apt-get install lua5.1 luarocks lua-sec
 luarocks install lua-cjson
+luarocks install luasocket
+luarocks install luasec
 export MATRIX_API_HTTP_CLIENT=luasocket
 ```
 
 You might need to prepend `sudo` to first and second commands.
 
-For the moment you need to disabled mod security for lua-matrix to work. This will hopefully change.
+For the moment you need to add `matrix` to `secure.trusted_mods` for lua-matrix to work. This will hopefully change.
 
 ```
-secure.enable_security = false
+secure.trusted_mods = matrix
 ```
 
 [wiki]: https://wiki.minetest.net/Installing_mods

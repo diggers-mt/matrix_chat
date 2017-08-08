@@ -8,7 +8,7 @@ local ie, req_ie = _G, minetest.request_insecure_environment
 if req_ie then ie = req_ie() end
 if not ie then
   error("The Matrix mod requires access to insecure functions in order "..
-    "to work. Please disable mod security. This will hopefully change.")
+    "to work. Please add matrix to secure.trusted_mods.")
 end
 
 ie.package.path =
@@ -28,6 +28,10 @@ dofile(modpath.."/config.lua")
 local function eprintf(fmt, ...)
   minetest.log("info", fmt:format(...))
 end
+
+-- Temporarily set require so that LuaIRC can access it
+local old_require = require
+require = ie.require
 
 local client = require("matrix").client(matrix.config.server..":"..matrix.config.port)
 
@@ -139,3 +143,6 @@ function matrix.say(message)
     end
   end
 end
+
+-- Restore old (safe) functions
+require = old_require
