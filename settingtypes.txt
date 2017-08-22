@@ -16,3 +16,6 @@ matrix.room_id (Channel to join) string
 
 # Matrix user password.
 matrix.password (Server password) string
+
+# Matrix webhook url
+matrix.webhook_url (Webhook url) string
