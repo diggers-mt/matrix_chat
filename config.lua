@@ -32,3 +32,4 @@ setting("number", "port", 8448)           -- Server port to connect to
 setting("string", "room_id", nil, true)   -- Channel to join (not needed?)
 setting("string", "password", nil, true)  -- Server password
 setting("string", "webhook_url", nil)  -- Server password
+setting("string", "user_prefix", nil, true)  -- Server password

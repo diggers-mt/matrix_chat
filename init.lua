@@ -86,7 +86,7 @@ end):hook("joined", function (client, room)
       end
       client:logout()
       matrix.connected = false
-    elseif room.room_id == matrix.config.room_id then
+    elseif room.room_id == matrix.config.room_id and not string.match(sender, "^"..matrix.config.user_prefix) then
       minetest.chat_send_all("<"..sender.."> "..message.body)
     end
    end)

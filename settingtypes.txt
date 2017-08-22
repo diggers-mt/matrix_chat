@@ -19,3 +19,6 @@ matrix.password (Server password) string
 
 # Matrix webhook url
 matrix.webhook_url (Webhook url) string
+
+# Matrix user prefix, for matching senders. For example '@mt_'
+matrix.user_prefix (User prefix) string
