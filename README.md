@@ -5,6 +5,14 @@
 This mod creates a bridge between a [Matrix](https://matrix.org) channel and the in-game chat.
 The code is shamelessly based on the [irc](https://github.com/minetest-mods/irc) mod and examples from [lua-matrix](https://github.com/aperezdc/lua-matrix).
 
+This branch (`master`) needs a Matrix user that listens for messages and sends to Minetest. Chat messages posted in-game
+will be sent with the bot to the Matrix channel like so:
+
+```
+@minetestbot: <myuser> hello world
+```
+
+For a bridge where virtual users are created in Matrix, checkout the [appservice](https://github.com/diggers-mt/minetest-matrix/tree/appservice) branch!
 
 ## Installing
 
