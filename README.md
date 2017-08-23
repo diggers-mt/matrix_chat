@@ -5,6 +5,8 @@
 This mod creates a bridge between a [Matrix](https://matrix.org) channel and the in-game chat.
 The code is shamelessly based on the [irc](https://github.com/minetest-mods/irc) mod and examples from [lua-matrix](https://github.com/aperezdc/lua-matrix).
 
+On the **Matrix side** you need to install [matrix-appservice-minetest](https://github.com/joenas/matrix-appservice-minetest).
+
 
 ## Installing
 
@@ -59,6 +61,9 @@ secure.trusted_mods = matrix
 * `matrix.port`: Server port, default `8448`
 
 * `matrix.room_id`: Room to join, `room_id` in matrix. Always starts with `!`
+
+* `matrix.webhook_url`: The url of [matrix-appservice-minetest](https://github.com/joenas/matrix-appservice-minetest), `http://localhost:9898`
+* `matrix.user_prefix`: Prefix used for matrix users in `matrix-appservice-minetest`  § 12W
 
 
 ## License
