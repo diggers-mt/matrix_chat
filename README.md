@@ -63,7 +63,7 @@ secure.trusted_mods = matrix
 * `matrix.room_id`: Room to join, `room_id` in matrix. Always starts with `!`
 
 * `matrix.webhook_url`: The url of [matrix-appservice-minetest](https://github.com/joenas/matrix-appservice-minetest), `http://localhost:9898`
-* `matrix.user_prefix`: Prefix used for matrix users in `matrix-appservice-minetest`  § 12W
+* `matrix.user_prefix`: Prefix used for matrix users in `matrix-appservice-minetest`
 
 
 ## License
