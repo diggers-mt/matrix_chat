@@ -2,7 +2,6 @@ function eprintf(fmt, ...)
   minetest.log("info", fmt:format(...))
 end
 
-
 function table_print (tt, indent, done)
   done = done or {}
   indent = indent or 0

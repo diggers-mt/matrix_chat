@@ -25,7 +25,7 @@ matrix = {
 }
 
 dofile(modpath.."/config.lua")
---dofile(modpath.."/debug.lua")
+dofile(modpath.."/debug.lua")
 
 -- Temporarily set require so that LuaIRC can access it
 local old_require = require
