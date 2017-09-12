@@ -7,7 +7,7 @@ The code is shamelessly based on the [irc](https://github.com/minetest-mods/irc)
 
 On the **Matrix side** you need to install [matrix-appservice-minetest](https://github.com/joenas/matrix-appservice-minetest).
 
-** This is a work in progress**
+**This is a work in progress**
 Until we have a stable release, expect breaking changes and whatnot.
 
 ## Installing
