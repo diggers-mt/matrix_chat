@@ -62,11 +62,12 @@ secure.trusted_mods = matrix
 
 * `matrix.password`: Password for Matrix user
 
-* `matrix.server`: Server to connect to, include http(s), `https://matrix.org`
-
-* `matrix.port`: Server port, default `8448`
+* `matrix.server`: Server to connect to, include http(s) and port, `https://matrix.org`
 
 * `matrix.room_id`: Room to join, `room_id` in matrix. Always starts with `!`
+
+### Removed, don't use
+* `matrix.port`: Server port, default `8448`
 
 
 ## License

@@ -7,10 +7,6 @@ matrix.user (Username) string
 # Server to connect to, include http(s)
 matrix.server (Matrix server) string https://matrix.org
 
-# Server port.
-# The standard matrix port is 8448
-matrix.port (Server port) int 8448
-
 # Channel the bot joins after connecting.
 matrix.room_id (Channel to join) string
 

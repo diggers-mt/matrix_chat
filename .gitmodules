@@ -1,3 +1,6 @@
 [submodule "lua-matrix"]
 	path = lua-matrix
 	url = https://github.com/diggers-mt/lua-matrix
+[submodule "neturl"]
+	path = neturl
+	url = https://github.com/golgote/neturl.git
