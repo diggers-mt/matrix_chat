@@ -7,6 +7,8 @@ The code is shamelessly based on the [irc](https://github.com/minetest-mods/irc)
 
 On the **Matrix side** you need to install [matrix-appservice-minetest](https://github.com/joenas/matrix-appservice-minetest).
 
+** This is a work in progress**
+Until we have a stable release, expect breaking changes and whatnot.
 
 ## Installing
 
@@ -56,14 +58,15 @@ secure.trusted_mods = matrix
 
 * `matrix.password`: Password for Matrix user
 
-* `matrix.server`: Server to connect to, include http(s), `https://matrix.org`
-
-* `matrix.port`: Server port, default `8448`
+* `matrix.server`: Server to connect to, include http(s) and port, `https://matrix.org`
 
 * `matrix.room_id`: Room to join, `room_id` in matrix. Always starts with `!`
 
 * `matrix.webhook_url`: The url of [matrix-appservice-minetest](https://github.com/joenas/matrix-appservice-minetest), `http://localhost:9898`
 * `matrix.user_prefix`: Prefix used for matrix users in `matrix-appservice-minetest`
+
+### Removed, don't use
+* `matrix.port`: Server port, default `8448`
 
 
 ## License

@@ -13,6 +13,7 @@ end
 
 ie.package.path =
     modpath.."/lua-matrix/?.lua;"
+    ..modpath.."/neturl/lib/?.lua;"
     ..ie.package.path
 
 matrix = {
@@ -24,16 +25,16 @@ matrix = {
 }
 
 dofile(modpath.."/config.lua")
-
-local function eprintf(fmt, ...)
-  minetest.log("info", fmt:format(...))
-end
+--dofile(modpath.."/debug.lua")
 
 -- Temporarily set require so that LuaIRC can access it
 local old_require = require
 require = ie.require
 
-local client = require("matrix").client(matrix.config.server..":"..matrix.config.port)
+dofile(modpath.."/validate_server.lua")
+
+local hs_url = validate_server(matrix.config.server)
+local client = require("matrix").client(hs_url)
 
 local start_ts = os.time() * 1000
 
