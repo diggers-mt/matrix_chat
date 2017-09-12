@@ -14,6 +14,9 @@ will be sent with the bot to the Matrix channel like so:
 
 For a bridge where virtual users are created in Matrix, checkout the [appservice](https://github.com/diggers-mt/minetest-matrix/tree/appservice) branch!
 
+** This is a work in progress**
+Until we have a stable release, expect breaking changes and whatnot.
+
 ## Installing
 
 ```bash
