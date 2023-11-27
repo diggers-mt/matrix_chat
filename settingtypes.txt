@@ -1,14 +1,23 @@
-[Basic]
+# Insert those settings at the end of minetest.conf
+# and fill the required field
+# don't forget to add matrix_chat in secure.trusted_mods
 
-# Bots username. May only contain characters A-Z, 0-9
+## mod : matrix_chat
+
+# Matrix username. May only contain characters A-Z, 0-9
 # '{', '}', '[', ']', '|', '^', '-', or '_'.
-matrix.user (Username) string
+# eg : @minetestbot:matrix.org
+matrix.user =
 
 # Server to connect to, include http(s)
-matrix.server (Matrix server) string https://matrix.org
+# matrix.server (Matrix server) string 
+# eg : https://matrix.org
+matrix.server =
 
 # Channel the bot joins after connecting.
-matrix.room_id (Channel to join) string
+# matrix.room_id (Channel to join) string
+# eg : !abcde:matrix.org
+matrix.room_id =
 
-# Matrix user password.
-matrix.password (Server password) string
+# Matrix user password. (string)
+matrix.password =
