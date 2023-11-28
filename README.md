@@ -60,6 +60,7 @@ secure.trusted_mods = matrix_chat
 
 
 ## Settings
+All settings are written in `minetest.conf`. Inside matrix_chat directory, a file example is provided : `settingtypes`. Copy its content at the end of `minetest.conf` and fill its required field.
 
 * `matrix.user`: Matrix username, for example `@minetestbot:matrix.org`
 
